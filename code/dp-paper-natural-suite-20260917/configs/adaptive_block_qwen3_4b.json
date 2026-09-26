@@ -1,0 +1,31 @@
+{
+  "model": {
+    "target": "Qwen/Qwen3-4B",
+    "target_revision": "1cfa9a7208912126459214e8b04321603b3df60c",
+    "draft": "z-lab/Qwen3-4B-DFlash-b16",
+    "draft_revision": "b74e3a329c4d963783143b1e970d95b002be72bd",
+    "dtype": "bfloat16",
+    "target_attention": "sdpa",
+    "draft_attention": "sdpa",
+    "enable_thinking": false,
+    "allow_tf32": false
+  },
+  "datasets": ["gsm8k", "math500", "aime24", "aime25", "humaneval", "mbpp_sanitized", "livecodebench", "mt-bench"],
+  "seeds": [17, 29, 43],
+  "max_new_tokens": 2048,
+  "warmup_tokens": 32,
+  "method_order": {"policy": "balanced_rotation", "seed": 20260909},
+  "explicit_variants": [
+    {"groups": ["main", "t10"], "variant": {"name": "target_t1p0", "method": "target", "paths": 1, "length": 15, "temperature": 1.0, "probability_dtype": "float64", "tree_budget": 45}},
+    {"groups": ["main", "t10"], "variant": {"name": "dflash_t1p0", "method": "dflash", "paths": 1, "length": 15, "temperature": 1.0, "draft_temperature": null, "probability_dtype": "float64", "tree_budget": 45}},
+    {"groups": ["main", "t10"], "variant": {"name": "ddtree_t1p0", "method": "ddtree", "paths": 1, "length": 15, "temperature": 1.0, "draft_temperature": 1.0, "probability_dtype": "float64", "tree_budget": 45}},
+    {"groups": ["main", "t10"], "variant": {"name": "tree_block_verification_t1p0", "method": "ddtree_fused_scan", "paths": 1, "length": 15, "temperature": 1.0, "draft_temperature": 1.0, "probability_dtype": "float64", "tree_budget": 45}}
+  ],
+  "bootstrap_samples": 10000,
+  "scoring": {"code_backend": "docker", "workers": 4, "timeout_seconds": 10, "lcb_timeout_seconds": 6},
+  "evaluation": {
+    "protocol": "ddtree_counts",
+    "sample_seed": 0,
+    "counts": {"gsm8k": 128, "math500": 128, "aime24": 30, "aime25": 30, "humaneval": 164, "mbpp_sanitized": 128, "livecodebench": 128, "mt-bench": 80}
+  }
+}

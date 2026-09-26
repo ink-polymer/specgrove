@@ -1,0 +1,17 @@
+{
+  "commit": "c96427a185677bf4133ed865dd1626a5041aef9b",
+  "normalization": "A final LF is added when absent; no source logic is modified.",
+  "files": {
+    "make_latex_table.py": "818476772658c5de65ce00e2e3d29ec40f81e0cd12ac5ebd477b20367929f655",
+    "benchmark.py": "6dbffd0d61c173c0a622e8a669fa18e5159c7ec83073649db9ac8bcd39c9471b",
+    "LICENSE": "6355c7a7042a1f75a011d616446386d19fac37ea3f03560425f7f225ba9ae1d3",
+    "requirements.txt": "c24e5e4a9bf25902b69e86c05e832f960a142b1c80cd08b7d8456d07bf776640",
+    "ddtree.py": "8d0ecd9d07a7266d3825eefd176811502313a0da7cedfcdc8aec1a4971c3a99b",
+    "distributed.py": "e2d7d3252c78b83befd0d1a59d089084547a0f52ae6299bb1a4a6355d40c9468",
+    "run_benchmark.sh": "c7c36e4b92b2db42c301b358cdea910db399cefb1903e5b7fdfc8b3a306a1bcc",
+    "dflash.py": "297e5126980ff7bad7650ce7ede9dea9b11b1b3485154ab5b9a2a3f899b33159",
+    "model/__init__.py": "6bc5dc94f340a3bec1b38e2fb1ff7a684fba98ebb11eb8e54a95fb8c167511c4",
+    "model/utils.py": "a3c75cc8de132fb8803368d5720b62879a0c63e6860c37af745dd6debbfb367f",
+    "model/dflash.py": "17ab761ba665a41965b27bdc3a1c6795d1b07b285ec1f0789ad146f2ee9c1cc5"
+  }
+}
